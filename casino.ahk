@@ -2,6 +2,21 @@
 #SingleInstance force
 #Persistent
 
+global hGTA := 0x0
+global dwGTAPID := 0x0
+global dwSAMP := 0x0
+global pMemory := 0x0
+global pParam1 := 0x0
+global pParam2 := 0x0
+global pParam3 := 0x0
+global pParam4 := 0x0
+global pParam5 := 0x0
+global pInjectFunc := 0x0
+global iRefreshHandles := 0
+
+global GAME_MP_ModuleName := "azmp.dll" // Название модуля мультиплеера
+global GAME_PID := "AMAZING ONLINE" // Заголовок окна игры
+
 way = C:\Amazing Games\Amazing Russia\amazing\chatlog.txt  ; пишем сюда путь к чатлогу, например так
 IfNotExist, %way%
 {
@@ -14,13 +29,13 @@ summa = 0
 seriya = 0
 Loop, read, %way%
 nstroki=%A_Index%
-WinWait, AMAZING Криминальная Россия
+WinWait, AMAZING ONLINE
 addChatMessageEx(0x1E90FF, "{FFFFFF}Скрипт by rodzaevsky был подключён:{1E90FF} " version)
 start:
-WinWait, AMAZING Криминальная Россия
-ifWinNotExist, AMAZING Криминальная Россия
+WinWait, AMAZING ONLINE
+ifWinNotExist, AMAZING ONLINE
 {
-WinWait, AMAZING Криминальная Россия
+WinWait, AMAZING ONLINE
 sleep 20000
 reload
 }
