@@ -2,6 +2,13 @@
 #SingleInstance force
 #Persistent
 
+IfWinNotExist, AMAZING ONLINE
+{
+SplashTextOff
+Msgbox,16,Ошибка,Игра не запущена`n`nЗапустите игру, авторизуйтесь, затем попробуйте снова
+exitapp
+}
+
 global hGTA := 0x0
 global dwGTAPID := 0x0
 global dwSAMP := 0x0
